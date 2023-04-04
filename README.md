@@ -1,3 +1,5 @@
+# This is an edit with an overview of the project for a new visitor to my repo. All collaborators will be named here. The CIA wants to know.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
