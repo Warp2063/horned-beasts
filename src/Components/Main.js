@@ -34,15 +34,20 @@ function Main() {
     //<HornedBeast title="Narwhal" imageUrl="https://i.kym-cdn.com/photos/images/newsfeed/000/284/307/40c.png" description="They keep Cthulu from eating ye!" />
 
 
-    const rendBeasts = [];
-    for (let i = 0; i < beasts.length; i++) {
-        const {_id, title, image_url, description} = beasts[i];
-        rendBeasts.push(<HornedBeast id={_id} title={title} imageUrl={image_url} description={description} />);
-    }
+    // const rendBeasts = [];
+    // for (let i = 0; i < beasts.length; i++) {
+    //     const {_id, title, image_url, description} = beasts[i];
+    //     rendBeasts.push(<HornedBeast id={_id} title={title} imageUrl={image_url} description={description} />);
+    // }
+
     return (
         <main>
             <h2>And now, the beasties.</h2>
-            {rendBeasts}
+            <div className="beast-box">
+                {beasts.map((beast) => {
+                        return <HornedBeast id={beast._id} title={beast.title} imageUrl={beast.image_url} description={beast.description} />
+                    })}
+            </div>     
         </main>
     );
 }
