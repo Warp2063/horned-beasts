@@ -1,6 +1,7 @@
 import {useState} from "react";
 
-function HornedBeast({title, description, imageUrl}) {
+//function HornedBeast({title, description, imageUrl}) {
+function HornedBeast({beast, presentModal}) {
 
     //const title = {props.title};
     //const ImageUrl = props => <div>{props.children}</div>
@@ -8,16 +9,20 @@ function HornedBeast({title, description, imageUrl}) {
 
     const [votes, setVotes] = useState(0);
 
-    function clickHandler() {
+    function voteHandler() {
         setVotes(votes + 1);
     }
 
     return (
         <div className="horned-beast">
-            <h2>{title}</h2>
-            <img onClick={clickHandler} src={imageUrl} alt={title} title={title} />
-            <p>{description}</p>
-            <p>Votes: {votes}</p>
+            <h2>{beast.title}</h2>
+            <img src={beast.image_url}
+                alt={beast.title}
+                title={beast.title}
+                onClick={() => {presentModal(beast)}}
+            />
+            <div>{beast.description}</div>
+            <div className="votes" onClick={voteHandler}>Votes: 💖{votes}</div>
         </div>
     );
 }
